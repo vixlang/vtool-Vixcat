@@ -3,5 +3,5 @@ name = "Vixcat"
 version = "v0.1.0"
 description = "Vix 项目管理与构建工具"
 readme = "README.md"
-enterpoint = "vixcat.vix"
+entrypoint = "vixcat.vix"
 deps = []
