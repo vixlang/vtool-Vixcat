@@ -3,7 +3,7 @@ extern "C"
     fn printf(format: ptr, ...): i32
     fn fopen(filename: ptr, mode: ptr): ptr
     fn fclose(file: ptr): i32
-    fn fread(ptr: ptr, size: usize, count: usize, file: ptr): usize
+    fn fread(ptr: ptr, size: i32, count: i32, file: ptr): i32
     fn fwrite(ptr: ptr, size: usize, count: usize, file: ptr): usize
     fn malloc(size: i32): ptr
     fn free(ptr: ptr): void
@@ -27,7 +27,7 @@ fn main(argc: i32, argv: ptr): i32 {
     let mut bytes_read = fread(buffer, 1, 4096, file)
     
     while (bytes_read > 0) {
-        for (mut i in 0 .. bytes_read) {
+        for (i in 0 .. bytes_read) {
             printf("%c", buffer[i])
         }
         bytes_read = fread(buffer, 1, 4096, file)
